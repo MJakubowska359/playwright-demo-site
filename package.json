@@ -4,17 +4,17 @@
   "main": "index.js",
   "scripts": {
     "format": "npx prettier --write .",
-    "lint": "npx eslint . --max-warnings 0"
+    "lint": "npx eslint . --max-warnings=0"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@eslint/js": "^9.23.0",
+    "@eslint/js": "^9.24.0",
     "@playwright/test": "^1.51.1",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^22.13.14",
-    "eslint": "^9.23.0",
+    "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-playwright": "^2.2.0",
     "eslint-plugin-prettier": "^5.2.6",
