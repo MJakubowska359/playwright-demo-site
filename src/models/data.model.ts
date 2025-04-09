@@ -5,3 +5,11 @@ export interface PathModel {
 export interface HeaderModel {
   header: string;
 }
+
+export interface ContentModel {
+  content: string;
+}
+
+export interface FileNameModel {
+  name: string;
+}
