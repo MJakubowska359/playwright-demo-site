@@ -10,6 +10,10 @@ export interface ContentModel {
   content: string;
 }
 
-export interface FileNameModel {
+export interface NameModel {
   name: string;
+}
+
+export interface TextModel {
+  text: string;
 }

@@ -1,7 +1,7 @@
 import {
   ContentModel,
-  FileNameModel,
   HeaderModel,
+  NameModel,
   PathModel,
 } from '../models/data.model';
 
@@ -17,6 +17,10 @@ export const pdfContent: ContentModel = {
   content: 'Test file PDF',
 };
 
-export const pdfFileName: FileNameModel = {
+export const pdfFileName: NameModel = {
   name: 'info.pdf',
+};
+
+export const firstCountry: NameModel = {
+  name: 'sta',
 };
