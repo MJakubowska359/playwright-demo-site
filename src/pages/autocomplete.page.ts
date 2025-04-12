@@ -1,4 +1,4 @@
-import { firstCountry } from '../test-data/data.data';
+import { firstCountry, secondCountry } from '../test-data/data.data';
 import { BasePage } from './base.page';
 import { Page } from '@playwright/test';
 
@@ -18,5 +18,10 @@ export class AutocompletePage extends BasePage {
   async chooseFirstCountryFromList(): Promise<void> {
     await this.textInput.pressSequentially(firstCountry.name);
     await this.chosenOptionFromList.nth(6).click();
+  }
+
+  async chooseSecondCountryFromList(): Promise<void> {
+    await this.textInput.pressSequentially(secondCountry.name);
+    await this.chosenOptionFromList.first().click();
   }
 }

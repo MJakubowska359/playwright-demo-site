@@ -14,7 +14,7 @@ test.describe('Auto complete testing', () => {
     await generalPage.clickAcceptButton();
   });
 
-  test('Should be able to choose country in auto complete field', async () => {
+  test('Should be able to choose one country in auto complete field', async () => {
     // Arrange
     const expectedLabel = 'Check the autocomplete functionality here';
     const expectedChosenCountry = 'United States';
@@ -26,6 +26,24 @@ test.describe('Auto complete testing', () => {
     // Assert
     await expect(autoCompletePage.countryInField).toHaveText(
       expectedChosenCountry,
+    );
+  });
+
+  test('Should be able to choose two country in auto complete field', async () => {
+    // Arrange
+    const expectedChosenFirstCountry = 'United States';
+    const expectedChosenSecondCountry = 'France';
+
+    // Act
+    await autoCompletePage.chooseFirstCountryFromList();
+    await autoCompletePage.chooseSecondCountryFromList();
+
+    // Assert
+    await expect(autoCompletePage.countryInField.first()).toHaveText(
+      expectedChosenFirstCountry,
+    );
+    await expect(autoCompletePage.countryInField.nth(1)).toHaveText(
+      expectedChosenSecondCountry,
     );
   });
 });

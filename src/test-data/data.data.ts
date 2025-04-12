@@ -24,3 +24,7 @@ export const pdfFileName: NameModel = {
 export const firstCountry: NameModel = {
   name: 'sta',
 };
+
+export const secondCountry: NameModel = {
+  name: 'france',
+};
