@@ -46,4 +46,13 @@ test.describe('Auto complete testing', () => {
       expectedChosenSecondCountry,
     );
   });
+
+  test('Should be able to delete chosen country from auto complete field', async () => {
+    // Act
+    await autoCompletePage.chooseFirstCountryFromList();
+    await autoCompletePage.deleteChosenCountry();
+
+    // Assert
+    await expect(autoCompletePage.textInput).toBeEmpty();
+  });
 });

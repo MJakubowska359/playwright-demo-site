@@ -10,6 +10,7 @@ export class AutocompletePage extends BasePage {
   // Locators for form
   textInput = this.page.locator('#searchbox');
   chosenOptionFromList = this.page.getByRole('presentation');
+  deleteIcon = this.page.locator('.ui-icon');
 
   // Locators for assertions
   label = this.page.locator('#somelem');
@@ -23,5 +24,9 @@ export class AutocompletePage extends BasePage {
   async chooseSecondCountryFromList(): Promise<void> {
     await this.textInput.pressSequentially(secondCountry.name);
     await this.chosenOptionFromList.first().click();
+  }
+
+  async deleteChosenCountry(): Promise<void> {
+    await this.deleteIcon.click();
   }
 }
