@@ -13,6 +13,10 @@ export const zoom: HeaderModel = {
   header: 'Detailed Preview DP.jpg (750.62 KB)',
 };
 
+export const editor: HeaderModel = {
+  header: 'CKEditor',
+};
+
 export const pdfContent: ContentModel = {
   content: 'Test file PDF',
 };
@@ -27,4 +31,9 @@ export const firstCountry: NameModel = {
 
 export const secondCountry: NameModel = {
   name: 'france',
+};
+
+export const firstSentence: ContentModel = {
+  content:
+    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
 };
