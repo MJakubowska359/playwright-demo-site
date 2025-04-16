@@ -9,13 +9,21 @@ export class EditorPage extends BasePage {
 
   // Locators for form
   iframe = this.page
-    .frameLocator('iframe[title="Rich Text Editor, editor1"]')
+    .locator('iframe[title="Rich Text Editor, editor1"]')
+    .contentFrame()
     .locator('.cke_editable');
+  bodyButton = this.page.getByRole('button', { name: 'element body' });
+  boldButton = this.page.getByTitle('Bold');
 
   // Locators for assertions
   header = this.page.getByRole('heading');
 
   async writeFirstSentence(): Promise<void> {
     await this.iframe.pressSequentially(firstSentence.content);
+  }
+
+  async boldFirstSentence(): Promise<void> {
+    await this.iframe.press('Control+A');
+    await this.boldButton.click();
   }
 }

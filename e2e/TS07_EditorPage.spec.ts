@@ -23,4 +23,14 @@ test.describe('Editor testing', () => {
     await expect(editorPage.header.nth(1)).toHaveText(expectedHeader);
     await editorPage.writeFirstSentence();
   });
+
+  test('Should be able to bold text in editor', async () => {
+    // Arrange
+    const expectedHeader = editor.header;
+
+    // Act & Assert
+    await expect(editorPage.header.nth(1)).toHaveText(expectedHeader);
+    await editorPage.writeFirstSentence();
+    await editorPage.boldFirstSentence();
+  });
 });
