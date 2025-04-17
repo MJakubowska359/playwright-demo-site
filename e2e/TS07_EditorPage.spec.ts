@@ -33,4 +33,17 @@ test.describe('Editor testing', () => {
     await editorPage.writeFirstSentence();
     await editorPage.boldFirstSentence();
   });
+
+  test('Should be able to change editor size', async () => {
+    // Arrange
+    const expectedHeader = editor.header;
+
+    // Act
+    await editorPage.maximizeEditorSize();
+    await expect(editorPage.header.nth(1)).toBeHidden();
+    await editorPage.minimizeEditorSize();
+
+    // Assert
+    await expect(editorPage.header.nth(1)).toHaveText(expectedHeader);
+  });
 });
