@@ -1,4 +1,4 @@
-import { firstSentence } from '../test-data/data.data';
+import { firstSentence, secondSentence } from '../test-data/data.data';
 import { BasePage } from './base.page';
 import { Page } from '@playwright/test';
 
@@ -20,6 +20,14 @@ export class EditorPage extends BasePage {
   minimizeButton = this.page.getByRole('button', {
     name: 'Minimize',
   });
+  paragraphFormatList = this.page.getByRole('button', {
+    name: 'Format',
+    exact: true,
+  });
+  firstHeader = this.page
+    .locator('#cke_66_frame')
+    .contentFrame()
+    .getByRole('option', { name: 'Heading 1' });
 
   // Locators for assertions
   header = this.page.getByRole('heading');
@@ -28,9 +36,23 @@ export class EditorPage extends BasePage {
     await this.iframe.pressSequentially(firstSentence.content);
   }
 
+  async writeSecondSentence(): Promise<void> {
+    await this.iframe.press('Enter');
+    await this.iframe.pressSequentially(secondSentence.content);
+  }
+
   async boldFirstSentence(): Promise<void> {
     await this.iframe.press('Control+A');
     await this.boldButton.click();
+  }
+
+  async changeFormatOfFirstSentence(): Promise<void> {
+    await this.iframe.press('Control+A');
+    await this.paragraphFormatList.click();
+    await this.firstHeader.click();
+    await this.iframe.click();
+    await this.iframe.press('End');
+    await this.iframe.press('Enter');
   }
 
   async maximizeEditorSize(): Promise<void> {

@@ -34,6 +34,17 @@ test.describe('Editor testing', () => {
     await editorPage.boldFirstSentence();
   });
 
+  test('Should be able to change format paragraph for the first sentence', async () => {
+    // Arrange
+    const expectedHeader = editor.header;
+
+    // Act & Assert
+    await expect(editorPage.header.nth(1)).toHaveText(expectedHeader);
+    await editorPage.writeFirstSentence();
+    await editorPage.changeFormatOfFirstSentence();
+    await editorPage.writeSecondSentence();
+  });
+
   test('Should be able to change editor size', async () => {
     // Arrange
     const expectedHeader = editor.header;

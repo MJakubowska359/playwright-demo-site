@@ -34,6 +34,10 @@ export const secondCountry: NameModel = {
 };
 
 export const firstSentence: ContentModel = {
+  content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+};
+
+export const secondSentence: ContentModel = {
   content:
-    'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    'Proin quam augue, gravida non luctus sit amet, semper eu elit. Suspendisse blandit nisi nec maximus malesuada. Aliquam sit amet quam dolor. Fusce nisi dolor, scelerisque quis diam sed, consectetur interdum ipsum. Fusce bibendum dui nisl, sit amet pharetra mi cursus at. Pellentesque ut euismod erat. Suspendisse metus purus, elementum et quam sed, dictum euismod tortor. Fusce quis justo eros. Duis vitae urna sed orci lobortis iaculis quis id leo.',
 };
