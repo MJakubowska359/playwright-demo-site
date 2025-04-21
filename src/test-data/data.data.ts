@@ -3,10 +3,15 @@ import {
   HeaderModel,
   NameModel,
   PathModel,
+  UrlModel,
 } from '../models/data.model';
 
 export const uploadFile: PathModel = {
   file: 'src/test-data/files-to-upload/DP.jpg',
+};
+
+export const imageInNote: PathModel = {
+  file: 'src/test-data/files-to-upload/fonts.jpg',
 };
 
 export const zoom: HeaderModel = {
@@ -19,6 +24,10 @@ export const editor: HeaderModel = {
 
 export const note: HeaderModel = {
   header: 'SummerNote',
+};
+
+export const image: HeaderModel = {
+  header: 'Insert Image',
 };
 
 export const pdfContent: ContentModel = {
@@ -49,4 +58,8 @@ export const secondSentence: ContentModel = {
 export const firstNote: ContentModel = {
   content:
     'Comic sans to jedna z najbardziej znienawidzonych czcionek przez grafików. Wydawać by się więc mogło, że nie jest ona za często używana, ale jest wręcz odwrotnie. Jej popularność jest na tyle duża, że w niektórych krajach ma ona swoje święto. W Holandii obchodzony jest dzień Comic sans. W pierwszy piątek lipca radiowi prezenterzy zachęcają, aby korzystać tylko i wyłącznie z tego fontu. Natomiast w Skype, przy wyborze czcionki CS pojawia się smutna buźka.',
+};
+
+export const fontsImage: UrlModel = {
+  url: 'https://i1.kwejk.pl/k/obrazki/2019/07/6CNgmPYs9Nq2p3HX.jpg',
 };

@@ -1,6 +1,7 @@
+/* eslint-disable playwright/no-wait-for-timeout */
 import { GeneralPage } from '../src/pages/general.page';
 import { NotePage } from '../src/pages/note.page';
-import { note } from '../src/test-data/data.data';
+import { image, note } from '../src/test-data/data.data';
 import { expect, test } from '@playwright/test';
 
 test.describe('Note testing', () => {
@@ -15,7 +16,7 @@ test.describe('Note testing', () => {
     await generalPage.clickAcceptButton();
   });
 
-  test('Should be able to write text in editor', async () => {
+  test('Should be able to write text in note', async () => {
     // Arrange
     const expectedHeader = note.header;
 
@@ -23,5 +24,19 @@ test.describe('Note testing', () => {
     await expect(notePage.header.nth(1)).toHaveText(expectedHeader);
     await notePage.deleteDefaultText();
     await notePage.writeFirstNoteByComicSansFont();
+  });
+
+  test('Should be able to add image', async ({ page }) => {
+    // Arrange
+    const expectedHeader = image.header;
+    const expectedPageHeader = note.header;
+
+    // Act & Assert
+    await notePage.deleteDefaultText();
+    await notePage.clickImageButton();
+    await expect(notePage.header.nth(2)).toHaveText(expectedHeader);
+    await notePage.addImage();
+    await page.waitForTimeout(2000);
+    await expect(notePage.header.nth(1)).toHaveText(expectedPageHeader);
   });
 });

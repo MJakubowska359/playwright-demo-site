@@ -1,4 +1,4 @@
-import { firstNote } from '../test-data/data.data';
+import { firstNote, fontsImage } from '../test-data/data.data';
 import { BasePage } from './base.page';
 import { Page } from '@playwright/test';
 
@@ -14,6 +14,9 @@ export class NotePage extends BasePage {
   noteContent = this.page
     .locator('div')
     .filter({ hasText: /^Hello Summernote$/ });
+  pictureButton = this.page.locator('.note-icon-picture');
+  imageUrlInput = this.page.locator('.note-image-url');
+  insertImageButton = this.page.getByRole('button', { name: 'Insert Image' });
 
   // Locators for assertions
   header = this.page.getByRole('heading');
@@ -27,5 +30,14 @@ export class NotePage extends BasePage {
     await this.paragraphStyleList.click();
     await this.fontButton.nth(2).click();
     await this.noteBody.pressSequentially(firstNote.content);
+  }
+
+  async clickImageButton(): Promise<void> {
+    await this.pictureButton.click();
+  }
+
+  async addImage(): Promise<void> {
+    await this.imageUrlInput.pressSequentially(fontsImage.url);
+    await this.insertImageButton.click();
   }
 }

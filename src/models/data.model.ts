@@ -17,3 +17,7 @@ export interface NameModel {
 export interface TextModel {
   text: string;
 }
+
+export interface UrlModel {
+  url: string;
+}
