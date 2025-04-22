@@ -60,6 +60,15 @@ export const firstNote: ContentModel = {
     'Comic sans to jedna z najbardziej znienawidzonych czcionek przez grafików. Wydawać by się więc mogło, że nie jest ona za często używana, ale jest wręcz odwrotnie. Jej popularność jest na tyle duża, że w niektórych krajach ma ona swoje święto. W Holandii obchodzony jest dzień Comic sans. W pierwszy piątek lipca radiowi prezenterzy zachęcają, aby korzystać tylko i wyłącznie z tego fontu. Natomiast w Skype, przy wyborze czcionki CS pojawia się smutna buźka.',
 };
 
+export const secondNote: ContentModel = {
+  content:
+    'Comic Sans posiada wiele dystynktywnych cech ułatwiających jego odczytanie osobom z dysleksją.',
+};
+
 export const fontsImage: UrlModel = {
   url: 'https://i1.kwejk.pl/k/obrazki/2019/07/6CNgmPYs9Nq2p3HX.jpg',
+};
+
+export const CuriositiesSource: UrlModel = {
+  url: 'https://rocketjobs.pl/blog/comic-sans-to-czcionka-dla-dyslektykow-o-co-chodzi',
 };

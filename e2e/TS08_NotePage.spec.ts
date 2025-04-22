@@ -39,4 +39,15 @@ test.describe('Note testing', () => {
     await page.waitForTimeout(2000);
     await expect(notePage.header.nth(1)).toHaveText(expectedPageHeader);
   });
+
+  test('Should be able to write quote and add source in note', async () => {
+    // Arrange
+    const expectedHeader = note.header;
+
+    // Act & Assert
+    await expect(notePage.header.nth(1)).toHaveText(expectedHeader);
+    await notePage.deleteDefaultText();
+    await notePage.changeTextStyle();
+    await notePage.writeCuriositiesSource();
+  });
 });

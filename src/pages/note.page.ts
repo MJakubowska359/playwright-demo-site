@@ -1,4 +1,9 @@
-import { firstNote, fontsImage } from '../test-data/data.data';
+import {
+  CuriositiesSource,
+  firstNote,
+  fontsImage,
+  secondNote,
+} from '../test-data/data.data';
 import { BasePage } from './base.page';
 import { Page } from '@playwright/test';
 
@@ -17,6 +22,14 @@ export class NotePage extends BasePage {
   pictureButton = this.page.locator('.note-icon-picture');
   imageUrlInput = this.page.locator('.note-image-url');
   insertImageButton = this.page.getByRole('button', { name: 'Insert Image' });
+  styleList = this.page.getByRole('button', { name: ' ' });
+  quoteStyle = this.page.getByRole('link').filter({ hasText: 'blockquote' });
+  paragraphStyle = this.page.getByRole('link', { name: 'p', exact: true });
+  headingFiveStyle = this.page.getByRole('link', { name: 'h5' });
+  textColor = this.page.getByRole('button', { name: '', exact: true });
+  greenTextColor = this.page
+    .locator('div:nth-child(2) > button:nth-child(4)')
+    .first();
 
   // Locators for assertions
   header = this.page.getByRole('heading');
@@ -39,5 +52,22 @@ export class NotePage extends BasePage {
   async addImage(): Promise<void> {
     await this.imageUrlInput.pressSequentially(fontsImage.url);
     await this.insertImageButton.click();
+  }
+
+  async changeTextStyle(): Promise<void> {
+    await this.styleList.click();
+    await this.quoteStyle.click();
+    await this.noteBody.pressSequentially(secondNote.content);
+  }
+
+  async writeCuriositiesSource(): Promise<void> {
+    await this.noteBody.press('Enter');
+    // await this.styleList.click();
+    // await this.paragraphStyle.click();
+    await this.textColor.click();
+    await this.greenTextColor.click();
+    await this.styleList.click();
+    await this.headingFiveStyle.click();
+    await this.noteBody.pressSequentially(CuriositiesSource.url);
   }
 }
