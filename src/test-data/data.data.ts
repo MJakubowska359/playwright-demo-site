@@ -62,7 +62,7 @@ export const firstNote: ContentModel = {
 
 export const secondNote: ContentModel = {
   content:
-    'Comic Sans posiada wiele dystynktywnych cech ułatwiających jego odczytanie osobom z dysleksją.',
+    'Ciekawostka: Comic Sans posiada wiele dystynktywnych cech ułatwiających jego odczytanie osobom z dysleksją.',
 };
 
 export const fontsImage: UrlModel = {
