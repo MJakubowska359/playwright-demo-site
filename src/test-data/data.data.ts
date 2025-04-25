@@ -30,6 +30,14 @@ export const image: HeaderModel = {
   header: 'Insert Image',
 };
 
+export const singleModal: HeaderModel = {
+  header: 'Modal title',
+};
+
+export const modalPage: HeaderModel = {
+  header: 'Bootstrap Modal',
+};
+
 export const pdfContent: ContentModel = {
   content: 'Test file PDF',
 };
