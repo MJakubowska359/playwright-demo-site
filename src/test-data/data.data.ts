@@ -34,6 +34,10 @@ export const singleModal: HeaderModel = {
   header: 'Modal title',
 };
 
+export const multipleModal: HeaderModel = {
+  header: 'First Modal',
+};
+
 export const modalPage: HeaderModel = {
   header: 'Bootstrap Modal',
 };

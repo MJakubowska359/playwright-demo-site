@@ -25,4 +25,8 @@ export class ModalsPage extends BasePage {
   async clickSaveModalButton(): Promise<void> {
     await this.closeButton.first().click();
   }
+
+  async clickBootstrapModalInMultipleModal(): Promise<void> {
+    await this.modal.nth(1).click();
+  }
 }
