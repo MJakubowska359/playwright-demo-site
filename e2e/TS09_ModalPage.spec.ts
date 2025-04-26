@@ -1,6 +1,11 @@
 import { GeneralPage } from '../src/pages/general.page';
 import { ModalsPage } from '../src/pages/modals.page';
-import { modalPage, multipleModal, singleModal } from '../src/test-data/data.data';
+import {
+  firstModal,
+  modalPage,
+  multipleModal,
+  secondModal,
+} from '../src/test-data/data.data';
 import { expect, test } from '@playwright/test';
 
 test.describe('Modals testing', () => {
@@ -17,7 +22,7 @@ test.describe('Modals testing', () => {
 
   test('Should be able to open and close single modal', async () => {
     // Arrange
-    const expectedModalHeader = singleModal.header;
+    const expectedModalHeader = firstModal.header;
     const expectedModalPageHeader = modalPage.header;
 
     // Act
@@ -35,17 +40,17 @@ test.describe('Modals testing', () => {
 
   test('Should be able to open and close multiple modal', async () => {
     // Arrange
-    const expectedModalHeader = multipleModal.header;
-    const expectedModalPageHeader = modalPage.header;
+    const expectedModalHeader = secondModal.header;
+    const expectedMultipleModalHeader = multipleModal.header;
 
     // Act
-    await modalsPage.clickBootstrapModalInMultipleModal();
+    await modalsPage.clickMultipleModal();
     await expect(modalsPage.header.nth(1)).toHaveText(expectedModalHeader);
-    await modalsPage.clickSaveModalButton();
+    await modalsPage.clickLaunchModalInMultipleModal();
 
     // Assert
-    await expect(modalsPage.modalHeader.first()).toHaveText(
-      expectedModalPageHeader,
+    await expect(modalsPage.modalTitle.nth(2)).toHaveText(
+      expectedMultipleModalHeader,
     );
   });
 });

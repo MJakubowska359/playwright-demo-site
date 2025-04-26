@@ -30,12 +30,16 @@ export const image: HeaderModel = {
   header: 'Insert Image',
 };
 
-export const singleModal: HeaderModel = {
+export const firstModal: HeaderModel = {
   header: 'Modal title',
 };
 
-export const multipleModal: HeaderModel = {
+export const secondModal: HeaderModel = {
   header: 'First Modal',
+};
+
+export const multipleModal: HeaderModel = {
+  header: 'Modal 2',
 };
 
 export const modalPage: HeaderModel = {
